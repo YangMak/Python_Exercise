@@ -16,7 +16,7 @@ BC 264 days
 EF 303 days
 ''' 
 
-import datetime;
+import datetime
 
 birthdayList={}
 
@@ -28,28 +28,28 @@ tDate = datetime.datetime(tYear,tMonth, tDay)
 tDayGap = tDate.timestamp()
 
 
-menber_num = int(input("Insert menber Number: "))
+member_num = int(input("Insert member Number: "))
 
 
-i = 0;
-while i < menber_num:
-  menberList = input("Insert Name & Birthday:")  
-  name = menberList.split(" ")[0]
-  birthday = menberList.split(" ")[1]
+i = 0
+while i < member_num:
+  memberList = input("Insert Name & Birthday:")  
+  name = memberList.split(" ")[0]
+  birthday = memberList.split(" ")[1]
 
   bM = int(birthday.split("/")[0])
   bD = int(birthday.split("/")[1])
-  mydate = datetime.datetime(tYear,bM, bD)
-  dayGap = mydate.timestamp()
+  setDate = datetime.datetime(tYear,bM, bD)
+  dayGap = setDate.timestamp()
   if dayGap < tDayGap:
-    mydate = datetime.datetime(tYear+1,bM, bD)
-    dayGap = mydate.timestamp()
+    setDate = datetime.datetime(tYear+1,bM, bD)
+    dayGap = setDate.timestamp()
   
   total = int(abs((tDayGap - dayGap) / 86400))
 
   birthdayList[name] = total
   
-  menber_num -= 1 
+  member_num -= 1 
 
 for s in sorted(birthdayList, key=birthdayList.get):
   print(s, ' ', birthdayList[s], 'days')
