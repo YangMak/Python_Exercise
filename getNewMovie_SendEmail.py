@@ -1,3 +1,8 @@
+'''
+Note : Let less secure apps access your account
+https://myaccount.google.com/lesssecureapps
+'''
+
 import requests
 from pyquery import PyQuery as pq
 import smtplib
@@ -23,4 +28,3 @@ server.login(gmail_user, gmail_password)
 server.send_message(msg)
 server.quit()
 print('NewMovie Email sent!')
-     
