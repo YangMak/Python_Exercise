@@ -9,15 +9,15 @@ import smtplib
 from email.mime.text import MIMEText
 import time
 
-dataUrl = 'http://www.miramarcinemas.tw/Home/startordertime'   #美麗華開放預購票訂位網址
+dataUrl = 'http://www.miramarcinemas.tw/Home/startordertime'  #美麗華開放預購票訂位網址
 doc = pq(url=dataUrl)
-fc1 = doc('.content .row>p').filter(lambda i: i > 1 ).text(squash_space=False)
-print(fc1)   
+fc = doc('.content .row>p').filter(lambda i: i > 1 ).text(squash_space=False)
+##print(fc)   
 
 gmail_user = 'makyean@gmail.com'
 gmail_password = '' #gmail password
 
-msg = MIMEText(fc1)
+msg = MIMEText(fc)
 msg['Subject'] = 'New Movie List'
 msg['From'] = gmail_user
 msg['To'] = 'makyean@gmail.com'
