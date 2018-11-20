@@ -7,7 +7,6 @@ you 3
 0
 sample Output :
 How are you today.
-Taipai
 ''' 
 
 resultlist={}
