@@ -14,13 +14,13 @@ doc = pq(url=dataUrl)
 fc = doc('.content .row>p').filter(lambda i: i > 1 ).text(squash_space=False)
 ##print(fc)   
 
-gmail_user = 'makyean@gmail.com'
-gmail_password = '' #gmail password
+gmail_user = 'makyean@gmail.com' ##sender
+gmail_password = '' ##gmail password
 
 msg = MIMEText(fc)
 msg['Subject'] = 'New Movie List'
 msg['From'] = gmail_user
-msg['To'] = 'makyean@gmail.com'
+msg['To'] = 'makyean@gmail.com' ##addressee
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.ehlo()
