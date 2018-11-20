@@ -11,7 +11,7 @@ EF 2/28
 sample Output :
 AB 0 days
 DE 68 days
-CD 162 daysclear
+CD 162 days
 BC 264 days
 EF 303 days
 ''' 
